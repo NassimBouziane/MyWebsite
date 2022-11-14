@@ -1,0 +1,17 @@
+{
+  "extends": [
+      "airbnb-base",
+      "airbnb-typescript/base",
+      "next/core-web-vitals"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": { "project": ["./tsconfig.json"] },
+  "plugins": [
+      "@typescript-eslint"
+  ],
+  "rules": {
+      "no-console": "off",
+      "no-restricted-syntax": "off",
+      "no-param-reassign": "off"
+  }
+}
