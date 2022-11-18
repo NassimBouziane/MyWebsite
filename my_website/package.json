@@ -5,9 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "proxy": "http://locahost:3001",
     "start": "next start",
     "lint": "next lint",
-    "test":"start cmd /k cd ../../../MyAPI/group-990941/ ^&^& ts-node ./src/server.ts && TIMEOUT /T 10 && npm run dev"
+    "test":"start cmd /k cd ../../../MyAPI/group-990941/ ^&^& npm run dev && TIMEOUT /T 10 && npm run dev"
   },
   "dependencies": {
     "@types/node": "18.11.9",
