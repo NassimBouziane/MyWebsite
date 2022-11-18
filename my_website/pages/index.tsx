@@ -1,9 +1,11 @@
-import NavBar from "./header";
-import Footer from "./footer";
+import NavBar from './header'
+import Footer from './footer'
 
-export default function home(){
-  return <div>
-    <NavBar/>
-    <Footer/>
-  </div>
+export default function home() {
+  return (
+    <div>
+      <NavBar />
+      <Footer />
+    </div>
+  )
 }

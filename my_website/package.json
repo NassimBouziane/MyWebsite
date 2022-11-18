@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test":"start cmd /k cd ../../../MyAPI/group-990941/ ^&^& ts-node ./src/server.ts && TIMEOUT /T 10 && npm run dev"
   },
   "dependencies": {
     "@types/node": "18.11.9",
