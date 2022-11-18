@@ -1,7 +1,9 @@
-import Index from './index'
+import NavBar from "./header";
+import Footer from "./footer";
 export default function bouteilles(){
     return <div>
-    <Index/>
+    <NavBar/>
+    <Footer/>
 </div>
 }
 

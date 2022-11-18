@@ -1,6 +1,8 @@
-import Index from './index'
+import NavBar from "./header";
+import Footer from "./footer";
 export default function accessoire(){
     return <div>
-        <Index/>
+    <NavBar/>
+    <Footer/>
     </div>
 }
