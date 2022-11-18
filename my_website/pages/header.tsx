@@ -41,12 +41,12 @@ export default function NavBar() {
         </ul>        
       </div>
     </header>
-      {data && data.map((user)=>{
+      {/* {data && data.map((user)=>{
       return(
         <div key={user.id}>
           <p>{user.username+ " "+user.password}</p>
         </div>
-      )})}
+      )})} */}
     
   </div>
 }

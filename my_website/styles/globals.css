@@ -5,7 +5,9 @@ body {
   margin: 0%;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-color: #eff8f6;
 }
+
 
 a {
   color: inherit;
@@ -15,8 +17,6 @@ a {
 * {
   box-sizing: border-box;
 }
-
-/* header */
 
 header{
   background-color: #30524f;
@@ -78,4 +78,26 @@ footer{
 
 .footer{
 display:inline-block
+} 
+
+/* ACCOUNT/MOI */
+
+#BoxInfo{
+  margin : 0 auto;
+  height: 50;
+  width: 90%;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 10px 5px 5px #e7e2e2;
+}
+.account_title{
+width: 50%;
+height: 10%;
+display: inline-block;
+text-align: center;
+box-shadow: 1px 1px 1px #e7e2e2;
+}
+
+.account_title:active{
+  color: #efe9e9;
 }
