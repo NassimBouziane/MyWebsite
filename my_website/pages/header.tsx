@@ -11,13 +11,13 @@ export default function NavBar() {
     //1-copie state
 
     //2-manipulation
-  useEffect(() =>{
- fetchUser().then((response) => {
-  setData(response.data);
+//   useEffect(() =>{
+//  fetchUser().then((response) => {
+//   setData(response.data);
   
-});
+// });
 
-  }, []);
+//   }, []);
   //affichage (render)
   
   return <div id="body">
