@@ -83,21 +83,46 @@ display:inline-block
 /* ACCOUNT/MOI */
 
 #BoxInfo{
+  position: relative;
   margin : 0 auto;
   height: 50;
   width: 90%;
   background-color: white;
   border-radius: 8px;
-  box-shadow: 10px 5px 5px #e7e2e2;
+  box-shadow: 10px 5px 5px #e7e2e2;  
+  z-index: auto;
 }
 .account_title{
 width: 50%;
 height: 10%;
-display: inline-block;
+display:inline-block;
 text-align: center;
 box-shadow: 1px 1px 1px #e7e2e2;
+border-style:solid;
+border-top: none;
+border-bottom: none;
+border-left: none;
+font-size: 25px;
+border-width: 1px;
+border-color: #c6c5c5;
+
+}
+.account_title:last-child{
+  border: none;
 }
 
-.account_title:active{
-  color: #efe9e9;
+.account_title:focus{
+  background-color: #efe9e9;
+}
+
+.account_info{
+  position: relative;
+  z-index: -1;
+  background-color: red;
+}
+
+.account_parameter{
+  position: relative;
+  z-index: -1;
+  background-color: blue;
 }
