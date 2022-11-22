@@ -1,9 +1,14 @@
-import NavBar from "./header";
-import Footer from "./footer";
-export default function bouteilles(){
-    return <div>
-    <NavBar/>
-    <Footer/>
-</div>
+import NavBar from './header'
+import Footer from './footer'
+import { useEffect } from 'react'
+export default function bouteilles() {
+  useEffect(() => {
+    document.title = 'Bouteilles'
+  }, [])
+  return (
+    <div>
+      <NavBar />
+      <Footer />
+    </div>
+  )
 }
-
