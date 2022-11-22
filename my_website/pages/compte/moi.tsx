@@ -2,40 +2,49 @@ import Footer from '../footer';
 import NavBar from '../header';
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import TabPanel from '@mui/lab/TabPanel'
+import TabContext from '@mui/lab/TabContext';
+import TabList from '@mui/lab/TabList';
+import { useEffect, useState } from 'react'
+import { fetchUser } from '../../user/userService'
 
 
 export default function moi(){
-    const [value, setValue] = React.useState(0);
-
+const [value, setValue] = React.useState(0);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+  
+  const [data, setData] = useState(null)
+  
+   useEffect(() => {
+    fetchUser().then((response) => {
+      setData(response.data)
+    })
+  }, [])
 
  return <div>
     <NavBar/>
-        <Box id="BoxInfo">
-            <Tabs value={value} onChange={handleChange}centered>
-            <Tab className='account_title' label="Compte" />
-            <Tab className='account_title' label="Parameter" />
-            </Tabs>
+    <Box id="BoxInfo">
+      <TabContext value={value}>
+        <Box >
+          <TabList onChange={handleChange} aria-label="lab API tabs example"TabIndicatorProps={{style:{backgroundColor:"#eff8f6"}}} textColor="inherit"  >
+            <Tab disableRipple style={{minWidth:"50%"}} className='account_title' label="Compte" value="1" />
+            <Tab disableRipple style={{minWidth:"50%"}} className='account_title' label="Paramètre" value="2" />
+          </TabList>
         </Box>
+        <TabPanel  value="1">{data &&
+        data.map((user) => {
+          return (
+            <div key={user.id}>
+              <p>{user.username + ' ' + user.password}</p>
+            </div>
+          )
+        })}</TabPanel>
+        <TabPanel  value="2">Ton pere aussi</TabPanel>
+      </TabContext>
+    </Box>
     <Footer/>
 </div>
 }
-
-
-
-
-{/* <div>
-                <button className='account_title' onClick={sample.focusProfil()}>Compte</button>
-            
-                <button className='account_title'  onClick={sample.focusParameter()}>Paramètre</button>
-            </div>
-            <div className='account_info'id='profil'>
-                <h1>je suis info</h1>
-            </div>
-            <div className='account_parameter'id='parameter'>
-                <h1>je suis parametre</h1>
-            </div> */}
