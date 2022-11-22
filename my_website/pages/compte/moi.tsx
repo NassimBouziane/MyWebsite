@@ -6,23 +6,22 @@ import Tab from '@mui/material/Tab';
 import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
-import { useEffect, useState } from 'react'
-import { fetchUser } from '../../user/userService'
+import { useEffect, useState, useEffec } from 'react';
+import { fetchUser } from '../../user/userService';
 
 
 export default function moi(){
 const [value, setValue] = React.useState(0);
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
-  };
+};  
+const [data, setData] = useState(null)
   
-  const [data, setData] = useState(null)
-  
-   useEffect(() => {
-    fetchUser().then((response) => {
+useEffect(() => {
+ fetchUser(77).then((response) => {
       setData(response.data)
-    })
-  }, [])
+})
+}, [])
 
  return <div>
     <NavBar/>
@@ -34,15 +33,9 @@ const [value, setValue] = React.useState(0);
             <Tab disableRipple style={{minWidth:"50%"}} className='account_title' label="Paramètre" value="2" />
           </TabList>
         </Box>
-        <TabPanel  value="1">{data &&
-        data.map((user) => {
-          return (
-            <div key={user.id}>
-              <p>{user.username + ' ' + user.password}</p>
-            </div>
-          )
-        })}</TabPanel>
-        <TabPanel  value="2">Ton pere aussi</TabPanel>
+        <TabPanel  value="1">Nom d'utilisateur {data && <p>{data.username} </p>} Mot de passe {data && <p className='password'>{data.password}</p>}</TabPanel>
+        <TabPanel  value="2"></TabPanel>
+        <button onClick="">hide</button>
       </TabContext>
     </Box>
     <Footer/>
