@@ -30,16 +30,4 @@ export default function moi() {
   )
 }
 
-{
-  /* <div>
-                <button className='account_title' onClick={sample.focusProfil()}>Compte</button>
-            
-                <button className='account_title'  onClick={sample.focusParameter()}>Paramètre</button>
-            </div>
-            <div className='account_info'id='profil'>
-                <h1>je suis info</h1>
-            </div>
-            <div className='account_parameter'id='parameter'>
-                <h1>je suis parametre</h1>
-            </div> */
-}
+
