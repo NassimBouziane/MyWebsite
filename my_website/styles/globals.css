@@ -5,7 +5,7 @@ body {
   margin: 0%;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    background-color: #eff8f6;
+   background-color: white;
 }
 
 
@@ -104,26 +104,12 @@ display:flex
 .account_title{
 width: 100%;
 height: 8%;
-display:inline-block;
-text-align: center;
-box-shadow: 1px 1px 1px #e7e2e2;
-border-style:solid;
-border-top: none;
-border-bottom: none;
-border-left: none;
-font-size: 20px;
-border-width: 1px;
-border-color: #c6c5c5;
 
-}
-#BoxInfo:last-child{
-  border: none;
 }
 
 .account_title:focus{
   background-color: #efe9e9;
 }
 
-.MuiTabs-flexContainer{
-  
+.password{
 }
