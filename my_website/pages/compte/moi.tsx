@@ -1,8 +1,8 @@
-import Footer from '../footer';
-import NavBar from '../header';
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Tab from '@mui/material/Tab';
+import Footer from '../footer'
+import NavBar from '../header'
+import * as React from 'react'
+import Box from '@mui/material/Box'
+import Tab from '@mui/material/Tab'
 import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
@@ -10,6 +10,12 @@ import { useEffect, useState, useEffec } from 'react';
 import { fetchUser } from '../../user/userService';
 import { isComputedPropertyName } from 'typescript';
 
+export default function moi() {
+  const [value, setValue] = React.useState(0)
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue)
+  }
+  const [data, setData] = useState(null)
 
 let Bool = false
 export default function moi(){
