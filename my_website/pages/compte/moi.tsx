@@ -6,7 +6,7 @@ import Tab from '@mui/material/Tab'
 import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext'
 import TabList from '@mui/lab/TabList'
-import { useEffect, useState, useEffec } from 'react'
+import { useEffect, useState } from 'react'
 import { fetchUser } from '../../user/userService'
 
 export default function moi() {
