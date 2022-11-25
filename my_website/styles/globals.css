@@ -138,11 +138,6 @@ height: 8%;
 
 /*/////  PARAMETER/MOI   ////*/
 
-/* .inputAccount{
-  border: none;
-  background-color:rgb(249, 245, 245);
-} */
-
 #formInput {
   font-family: Helvetica, Arial, sans-serif;
   font-weight:500;
@@ -183,6 +178,15 @@ textarea {
   font-weight:700;
 }
 [type="submit"]:hover { background:#ac8e6e; }
+
+
+
+/*///// LOGIN/REGISTER POPUP  *//////
+
+.modal>content{
+  background-color: red;
+  width: 15%;
+}
 
 
 /*/////  PRODUCT CARD ////*/

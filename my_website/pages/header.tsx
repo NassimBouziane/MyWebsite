@@ -4,12 +4,6 @@ import Image from 'next/image'
 import IoEyeSharp from 'react-icons/io'
 
 export default function NavBar() {
-  // state(etat,données)
-  // comportement
-  // 1-copie state
-
-  // 2-manipulation
-  // affichage (render)
 
   return (
     <div id="body">

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { fetchProduct } from '../product/productService'
 import Image from 'next/image'
 
-export default function product() {
+export default function accesoires() {
   const [data, setData] = useState(null)
   function test() {
     console.log('test')
