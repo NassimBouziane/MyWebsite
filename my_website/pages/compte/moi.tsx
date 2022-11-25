@@ -6,10 +6,9 @@ import Tab from '@mui/material/Tab';
 import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
-import { useEffect, useState, useEffec } from 'react';
+import { useEffect, useState} from 'react';
 import { fetchUser } from '../../user/userService';
-import { isComputedPropertyName } from 'typescript';
-
+import {BsFillEyeSlashFill} from 'react-icons/bs'
 
 let Bool = false
 export default function moi(){
@@ -19,7 +18,7 @@ const handleChange = (event: React.SyntheticEvent, newValue: number) => {
 };
 const [data, setData] = useState(null)
 useEffect(() => {
- fetchUser(11).then((response) => {
+ fetchUser(9).then((response) => {
       setData(response.data)
 })
 }, [])
@@ -54,11 +53,15 @@ function handleclick(){
             <Tab disableRipple style={{minWidth:"50%"}} className='account_title' label="Paramètre" value="2" />
           </TabList>
         </Box>
-        <TabPanel  value="1">Nom d'utilisateur {data && <p>{data.username} </p>} Mot de passe {data && <p className='password'>{censoredPassword}</p>} <button onClick={handleclick}>hide</button></TabPanel>
+        <TabPanel  value="1"><span className='accountInfo'>Prenom</span> {data && <p>{data.firstName} </p>}
+         <span className='accountInfo'>Nom</span> {data && <p>{data.lastName}</p>}
+         <span className='accountInfo'>Nom d'utilisateur</span> {data && <p >{data.username} </p>}
+         <span className='accountInfo'>Email</span> {data && <p>{data.email} </p>}
+         <span className='accountInfo'>Mot de passe</span> {data && <p>{censoredPassword} <p><BsFillEyeSlashFill onClick={handleclick}/> </p></p>}
+         <span className='accountInfo'>Numero de téléphone</span> {data && <p >{data.phoneNumber} </p>} 
+          </TabPanel>
         <TabPanel  value="2"></TabPanel>
-       
       </TabContext>
     </Box>
-    <Footer/>
 </div>
 }
