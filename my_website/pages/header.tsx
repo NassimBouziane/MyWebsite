@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { BiUser, BiShoppingBag } from 'react-icons/bi'
 import Image from 'next/image'
+import IoEyeSharp from 'react-icons/io'
 
 export default function NavBar() {
   // state(etat,données)
