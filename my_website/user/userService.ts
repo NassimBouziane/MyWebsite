@@ -4,23 +4,19 @@ import { Cookies, useCookies } from 'react-cookie'
 import { useState } from 'react'
 import { getCookie, setCookie } from 'typescript-cookie'
 
-const Data2 = {
-  username: 'test12H00',
-  password: 'passwordeazeatest'
-}
-const Data1 = {
-  username: 'TESTOazezazeazezaaeza',
-  password: 'passwordeazeatest'
-}
 
 export const fetchUser = async (id: string | number) => {
   return await api.get('/user/' + id)
 }
 
-export const register = async () => {
+export const register = async (firstName:any,lastName:any,username:any,password:any,email:any,phoneNumber:any) => {
   return await api.post('/user/register/', {
-    username: Data2.username,
-    password: Data2.password
+    firstName: firstName,
+    lastName: lastName,
+    username: username,
+    password:password,
+    email: email,
+    phoneNumber: phoneNumber,
   })
 }
 
