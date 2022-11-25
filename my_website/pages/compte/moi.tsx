@@ -20,27 +20,30 @@ const [data, setData] = useState(null)
 useEffect(() => {
  fetchUser(9).then((response) => {
       setData(response.data)
-})
-}, [])
-const [showPassword,setShowPassword] = useState ("")
-let [censoredPassword, setCensoredPassword] = useState("")
-let hiddenPassword=""
-function compte(){
-if (data !== null){
-for(let i=0;data.password.length > i; i+=1){
-  hiddenPassword = hiddenPassword + "*"
-}
-setCensoredPassword(hiddenPassword)
-}}
+    })
+  }, [])
+  // const [showPassword, setShowPassword] = useState('')
+  const [censoredPassword, setCensoredPassword] = useState('')
+  let hiddenPassword = ''
+  function compte() {
+    if (data !== null) {
+      for (let i = 0; data.password.length > i; i += 1) {
+        hiddenPassword = hiddenPassword + '*'
+      }
+      setCensoredPassword(hiddenPassword);
+      hiddenPassword = '';
 
-function handleclick(){
-  if (data !== null && Bool === false){
-    Bool = true
-    setCensoredPassword(data.password);
+    }
   }
-  else if (Bool===true){
-    compte()
-    Bool = false;
+
+  function handleclick() {
+    if (data !== null && Bool === false) {
+      Bool = true
+      setCensoredPassword(data.password)
+    } else if (Bool === true) {
+      compte()
+      Bool = false
+    }
   }
 }
  return <div>
