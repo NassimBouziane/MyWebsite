@@ -9,7 +9,6 @@ export default function NavBar() {
   // 1-copie state
 
   // 2-manipulation
- 
   // affichage (render)
 
   return (

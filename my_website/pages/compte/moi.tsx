@@ -1,8 +1,8 @@
-import Footer from '../footer';
-import NavBar from '../header';
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Tab from '@mui/material/Tab';
+import Footer from '../footer'
+import NavBar from '../header'
+import * as React from 'react'
+import Box from '@mui/material/Box'
+import Tab from '@mui/material/Tab'
 import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';

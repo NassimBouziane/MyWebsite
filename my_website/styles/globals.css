@@ -1,10 +1,16 @@
+<<<<<<< HEAD
 html,body {
+=======
+html,
+body {   
+>>>>>>> 01e3ae56a621bafa0728b2d874ec3bd29ca4b042
   padding: 0%;
-  min-height: 100%;
   margin: 0%;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
    background-color: white;
+   position: relative;
+   min-height: 100vh;
 }
 
 
@@ -110,6 +116,68 @@ height: 8%;
   background-color: #efe9e9;
 }
 
+<<<<<<< HEAD
 .accountInfo{
   font-size: 25px;
 }
+=======
+.password{
+}
+
+/*///// TEST ////*/
+.cards{ 
+  position: relative;
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  color: black;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+
+.card {
+  margin: 40px;
+  position: relative;
+  max-width: 300px;
+  max-height: 350px;
+  box-shadow: 0 4px 30px -6px black;
+}
+
+.card-title {
+  display: block;
+  text-align: center;
+  color: #fff;
+  background-color: #C69765;
+  padding: 2%;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+}
+
+.card-desc {
+  display: block;
+  font-size: 1.2rem;
+  position: absolute;
+  height: 0;
+  top: 0;
+  opacity: 0;
+  padding: 18px 8%;
+  background: rgba(0,0,0,0.4);
+  transition: 0.3s ease;
+  overflow-y: auto;
+}
+
+.card:hover .card-desc {
+  opacity: 1;
+  margin-top: 0%;
+  height: 91.5%;
+  width: 100%;
+}
+
+>>>>>>> 01e3ae56a621bafa0728b2d874ec3bd29ca4b042
