@@ -4,30 +4,37 @@ import { Cookies, useCookies } from 'react-cookie'
 import { useState } from 'react'
 import { getCookie, setCookie } from 'typescript-cookie'
 
-
-export const fetchUser = async (id: string | number) => {
+export const fetchUser = async (id: any) => {
   return await api.get('/user/' + id)
 }
 
-export const register = async (firstName:any,lastName:any,username:any,password:any,email:any,phoneNumber:any) => {
+export const register = async (
+  firstName: any,
+  lastName: any,
+  username: any,
+  password: any,
+  email: any,
+  phoneNumber: any
+) => {
   return await api.post('/user/register/', {
-    firstName: firstName,
-    lastName: lastName,
-    username: username,
-    password:password,
-    email: email,
-    phoneNumber: phoneNumber,
+    firstName,
+    lastName,
+    username,
+    password,
+    email,
+    phoneNumber
   })
 }
 
-export const login = async () => {
+export const login = async (username, password) => {
   // console.log(Data1.username)
   return await api
     .post('/user/login/', {
-      username: Data1.username,
-      password: Data1.password
+      username,
+      password
     })
     .then((response) => {
+      setCookie('username', username)
       setCookie('Authorization', response.data)
     })
 }
@@ -50,7 +57,8 @@ export const modifyUsers = async (
   phoneNumber: any,
   password: any
 ) => {
-  fetchUser(Data1.username).then((response) => {
+  console.log(firstName, lastName, username, email, phoneNumber, password)  
+  fetchUser(getCookie('username')).then((response) => {
     setCookie('Id', response.data.id)
   })
 
@@ -62,8 +70,8 @@ export const modifyUsers = async (
         firstName,
         lastName,
         username,
-        password,
         email,
+        password,
         phoneNumber
       },
       {
@@ -74,5 +82,6 @@ export const modifyUsers = async (
     )
     .then((response) => {
       console.log('test2', response)
+      setCookie('username', username)
     })
 }
