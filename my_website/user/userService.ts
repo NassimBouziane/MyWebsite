@@ -26,15 +26,16 @@ export const register = async (
   })
 }
 
-export const login = async (username, password) => {
+export const login = async (usernameUser:any, passwordUser:any) => {
   // console.log(Data1.username)
+  console.log(usernameUser);
   return await api
     .post('/user/login/', {
-      username,
-      password
+      username : usernameUser,
+      password : passwordUser
     })
     .then((response) => {
-      setCookie('username', username)
+      setCookie('username', usernameUser)
       setCookie('Authorization', response.data)
     })
 }
