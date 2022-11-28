@@ -37,9 +37,7 @@ export default function NavBar() {
         <div id="test">
           <ul className="menu">
             <li className="liste">
-              <Link href="bento">
-                Bentos
-              </Link>
+              <Link href="bento">Bentos</Link>
             </li>
             <li className="liste">
               <Link href="bouteilles">Bouteilles</Link>

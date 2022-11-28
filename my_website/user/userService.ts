@@ -27,8 +27,6 @@ export const register = async (
 }
 
 export const login = async (usernameUser:any, passwordUser:any) => {
-  // console.log(Data1.username)
-  console.log(usernameUser);
   return await api
     .post('/user/login/', {
       username : usernameUser,
@@ -57,11 +55,8 @@ export const modifyUsers = async (
   email: any,
   phoneNumber: any,
   password: any
-) => {
-  console.log(firstName, lastName, username, email, phoneNumber, password)  
-  fetchUser(getCookie('username')).then((response) => {
-    setCookie('Id', response.data.id)
-  })
+) => { 
+
 
   return await api
     .put(

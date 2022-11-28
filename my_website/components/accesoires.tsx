@@ -17,17 +17,19 @@ export default function accesoires() {
       {data &&
         data.map((product, i) => {
           const src = `/${product.productName}.png`
-          return (
-            <div>
-              <div className="card">
-                <Image src={src} alt="Grento Logo with sticks and point and circle" width={800} height={800} />
-                <h2 className="card-title">{product.productName}</h2>
-                <p onClick={test} className="card-desc">
-                  {product.productPrice} €
-                </p>
+          if (product.isAccessory === 1) {
+            return (
+              <div>
+                <div className="card">
+                  <Image src={src} alt="Accessoires vendu par Greento" width={800} height={800} />
+                  <h2 className="card-title">{product.productName}</h2>
+                  <p onClick={test} className="card-desc">
+                    {product.productPrice} €
+                  </p>
+                </div>
               </div>
-            </div>
-          )
+            )
+          }
         })}
     </div>
   )
