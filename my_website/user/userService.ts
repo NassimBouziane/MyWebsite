@@ -76,8 +76,7 @@ export const modifyUsers = async (
         }
       }
     )
-    .then((response) => {
-      console.log('test2', response)
+    .then(() => {
       setCookie('username', username)
     })
 }
