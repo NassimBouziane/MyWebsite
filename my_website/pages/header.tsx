@@ -2,8 +2,24 @@ import Link from 'next/link'
 import { BiUser, BiShoppingBag } from 'react-icons/bi'
 import Image from 'next/image'
 import IoEyeSharp from 'react-icons/io'
+import { useState, useEffect } from 'react'
+import { getCookie } from 'typescript-cookie'
+import Test from './compte/test'
 
 export default function NavBar() {
+  const [connected, setConnected] = useState(<></>)
+  useEffect(() => {
+    if (getCookie('Authorization') === undefined) {
+      setConnected(<Test></Test>)
+    } else if (getCookie('Authorization') !== undefined) {
+      setConnected(
+        <Link href="/compte/moi">
+          {' '}
+          <BiUser />
+        </Link>
+      )
+    }
+  }, [])
 
   return (
     <div id="body">
@@ -21,7 +37,9 @@ export default function NavBar() {
         <div id="test">
           <ul className="menu">
             <li className="liste">
-              <Link href="bento">Bentos</Link>
+              <Link href="bento">
+                Bentos
+              </Link>
             </li>
             <li className="liste">
               <Link href="bouteilles">Bouteilles</Link>
@@ -33,9 +51,10 @@ export default function NavBar() {
               <Link href="APropos">A propos</Link>
             </li>
             <li className="liste">
-              <Link href="/compte/moi">
+              {/* <Link href="/compte/moi">
                 <BiUser />
-              </Link>
+              </Link> */}{' '}
+              {connected}
             </li>
             <li className="liste">
               <Link href="panier">
@@ -45,7 +64,6 @@ export default function NavBar() {
           </ul>
         </div>
       </header>
-      
     </div>
   )
 }

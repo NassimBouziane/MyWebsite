@@ -9,6 +9,7 @@ import TabList from '@mui/lab/TabList'
 import { useEffect, useState, useRef } from 'react'
 import { fetchUser, modifyUsers } from '../../user/userService'
 import { BsFillEyeSlashFill } from 'react-icons/bs'
+import { getCookie } from 'typescript-cookie'
 
 let Bool = false
 export default function moi() {
@@ -22,7 +23,7 @@ export default function moi() {
   }
   const [data, setData] = useState(null)
   useEffect(() => {
-    fetchUser('joshu1ds').then((response) => {
+    fetchUser(getCookie('username')).then((response) => {
       setData(response.data)
     })
   }, [])
@@ -113,7 +114,13 @@ export default function moi() {
                 </label>
                 <label>
                   Email{' '}
-                  <input ref={email} className="inputAccount" id="formInput" type="email" defaultValue={data && data.email} />
+                  <input
+                    ref={email}
+                    className="inputAccount"
+                    id="formInput"
+                    type="email"
+                    defaultValue={data && data.email}
+                  />
                 </label>
                 <label>
                   Numero de telephone{' '}
@@ -132,11 +139,10 @@ export default function moi() {
                     className="inputAccount"
                     id="formInput"
                     type="password"
-                    defaultValue={data && data.password }
+                    defaultValue={data && data.password}
                   />
                 </label>
                 <input type="submit" value="SUBMIT" />
-
               </form>
             </div>
           </TabPanel>

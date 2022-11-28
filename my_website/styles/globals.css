@@ -181,11 +181,13 @@ textarea {
 
 
 
-/*///// LOGIN/REGISTER POPUP  *//////
-
-.modal>content{
-  background-color: red;
-  width: 15%;
+/*///// LOGIN/REGISTER POPUP  /////*/
+.popup {
+  position: absolute;
+  display: flex;
+}
+#testpopup{
+  width: 100%;
 }
 
 
