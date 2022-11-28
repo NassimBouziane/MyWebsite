@@ -179,7 +179,12 @@ textarea {
 }
 [type="submit"]:hover { background:#ac8e6e; }
 
-
+#test3213{
+  height: 10px;
+  width: 10px;
+  left: 83%;
+  top: 81%;
+}
 
 /*///// LOGIN/REGISTER POPUP  /////*/
 .popup {

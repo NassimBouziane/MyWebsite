@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react'
 import { fetchProduct } from '../product/productService'
 import Image from 'next/image'
+import { createOrder } from '../OrderProduct/OrderProductService'
+import { getCookie, setCookie } from 'typescript-cookie'
+import { fetchUser } from '../user/userService'
 
 export default function accesoires() {
   const [data, setData] = useState(null)
+  
   function test() {
     console.log('test')
   }
@@ -11,6 +15,10 @@ export default function accesoires() {
     fetchProduct().then((response) => {
       setData(response.data)
     })
+    fetchUser(getCookie('username')).then((response) => {
+      setCookie('Id', response.data.id)
+    })
+    
   }, [])
   return (
     <div className="cards">

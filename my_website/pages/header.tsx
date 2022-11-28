@@ -5,6 +5,10 @@ import IoEyeSharp from 'react-icons/io'
 import { useState, useEffect } from 'react'
 import { getCookie } from 'typescript-cookie'
 import Test from './compte/test'
+import { createOrder } from '../OrderProduct/OrderProductService'
+
+const today = new Date()
+const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
 
 export default function NavBar() {
   const [connected, setConnected] = useState(<></>)
@@ -19,6 +23,7 @@ export default function NavBar() {
         </Link>
       )
     }
+    createOrder(date, getCookie('Id'))
   }, [])
 
   return (
@@ -48,12 +53,7 @@ export default function NavBar() {
             <li className="liste">
               <Link href="APropos">A propos</Link>
             </li>
-            <li className="liste">
-              {/* <Link href="/compte/moi">
-                <BiUser />
-              </Link> */}{' '}
-              {connected}
-            </li>
+            <li className="liste"> {connected}</li>
             <li className="liste">
               <Link href="panier">
                 <BiShoppingBag />
