@@ -9,7 +9,7 @@ import TabList from '@mui/lab/TabList'
 import { useEffect, useState, useRef } from 'react'
 import { fetchUser, modifyUsers } from '../../user/userService'
 import { BsFillEyeSlashFill } from 'react-icons/bs'
-import { getCookie } from 'typescript-cookie'
+import { getCookie, setCookie } from 'typescript-cookie'
 
 let Bool = false
 export default function moi() {
@@ -25,6 +25,7 @@ export default function moi() {
   useEffect(() => {
     fetchUser(getCookie('username')).then((response) => {
       setData(response.data)
+      setCookie('Id', response.data.id)
     })
   }, [])
   // const [showPassword, setShowPassword] = useState('')

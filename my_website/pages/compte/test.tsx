@@ -22,9 +22,11 @@ export default function test() {
   const firstName = useRef(null)
   const lastName = useRef(null)
   const username = useRef(null)
+  const usernameLogin = useRef(null)
   const email = useRef(null)
   const phoneNumber = useRef(null)
   const password = useRef(null)
+  const passwordLogin = useRef(null)
   function registerusers() {
     register(
       firstName.current.value,
@@ -36,7 +38,7 @@ export default function test() {
     )
   }
   function loginuser() {
-    login(username.current.value, password.current.value)
+    login(usernameLogin.current.value, passwordLogin.current.value)
   }
 
   return (
@@ -79,10 +81,10 @@ export default function test() {
 
           <form onSubmit={loginuser} id="formpopup">
             <label>
-              <input placeholder="Nom d'utilisateur" ref={username} className="inputAccount" id="formInput" type="text" />
+              Nom d'utilisateur <input ref={usernameLogin} className="inputAccount" id="formInput" type="text" />
             </label>
             <label>
-              <input placeholder='Mot de passe' ref={password} className="inputAccount" id="formInput" type="password" />
+              Mot de passe <input ref={passwordLogin} className="inputAccount" id="formInput" type="password" />
             </label>
             <button type="submit">Se connecter</button>
           </form>
