@@ -185,9 +185,46 @@ textarea {
 .popup {
   position: absolute;
   display: flex;
+  border-radius: 8px;
+  
 }
-#testpopup{
-  width: 100%;
+.modal{
+  backdrop-filter: blur(5px);
+}
+#formpopup{
+  width: 45%;
+  margin-right: 5%;
+  margin-top: 2%; 
+  margin-left: 3%; 
+}
+
+#formpopup:last-child{
+  display: inline-block;
+  margin-top: 12%;
+}
+#formInput{
+  size: 1px;
+  height: 1px;
+}
+
+.line{
+  border-left: 1px solid rgb(170, 112, 60);
+  height: 40%;
+  margin-left: 1px;
+  margin-top: 63%;
+}
+.line2{
+  border-left: 1px solid rgb(170, 112, 60);
+  height: 40%;
+  display: flex;
+  margin-top: 18%;
+  margin-left: 5%;
+}
+
+.or{
+  display: flex;
+  margin-top: 15%;
+  margin-left: -40%;
 }
 
 
