@@ -26,11 +26,11 @@ export const register = async (
   })
 }
 
-export const login = async (usernameUser:any, passwordUser:any) => {
+export const login = async (usernameUser: any, passwordUser: any) => {
   return await api
     .post('/user/login/', {
-      username : usernameUser,
-      password : passwordUser
+      username: usernameUser,
+      password: passwordUser
     })
     .then((response) => {
       setCookie('username', usernameUser)
@@ -55,9 +55,7 @@ export const modifyUsers = async (
   email: any,
   phoneNumber: any,
   password: any
-) => { 
-
-
+) => {
   return await api
     .put(
       '/user',
@@ -76,8 +74,7 @@ export const modifyUsers = async (
         }
       }
     )
-    .then((response) => {
-      console.log('test2', response)
+    .then(() => {
       setCookie('username', username)
     })
 }

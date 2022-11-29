@@ -43,41 +43,60 @@ export default function test() {
 
   return (
     <div>
-      <BiUser onClick={handleOpen}/>
-      <Modal className="modal"
+      <BiUser onClick={handleOpen} />
+      <Modal
+        className="modal"
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={{ width: 1000,height: 350, bgcolor: 'white', top: '20%', left: '17%' }} className="popup">
+        <Box sx={{ width: 1000, height: 350, bgcolor: 'white', top: '20%', left: '17%' }} className="popup">
           <form onSubmit={registerusers} id="formpopup">
             <label>
-               <input placeholder='Prénom' ref={firstName} className="inputAccount" id="formInput" type="text" />
+              <input placeholder="Prénom" ref={firstName} className="inputAccount" id="formInput" type="text" />
             </label>
             <label>
-             <input placeholder='Nom' ref={lastName} className="inputAccount" id="formInput" type="text" />
+              <input placeholder="Nom" ref={lastName} className="inputAccount" id="formInput" type="text" />
             </label>
             <label>
-              <input placeholder="Nom d'utilisateur" ref={username} className="inputAccount" id="formInput" type="text" />
+              <input
+                placeholder="Nom d'utilisateur"
+                ref={username}
+                className="inputAccount"
+                id="formInput"
+                type="text"
+              />
             </label>
             <label>
-              <input placeholder='Mot de passe' ref={password} className="inputAccount" id="formInput" type="password" />
+              <input
+                placeholder="Mot de passe"
+                ref={password}
+                className="inputAccount"
+                id="formInput"
+                type="password"
+              />
             </label>
             <label>
-              <input placeholder='Email' ref={email} className="inputAccount" id="formInput" type="email" />
+              <input placeholder="Email" ref={email} className="inputAccount" id="formInput" type="email" />
             </label>
             <label>
-              <input placeholder="Numero de téléphone" ref={phoneNumber} className="inputAccount" id="formInput" type="tel" />
+              <input
+                placeholder="Numero de téléphone"
+                ref={phoneNumber}
+                className="inputAccount"
+                id="formInput"
+                type="tel"
+              />
             </label>
             <button type="submit">S'inscrire</button>
           </form>
 
-            <div className='separation'>
-              <div className='line'></div>
-              <p className='or'>Ou</p>
-              <div className='line2'></div>
-            </div>
+          <div className="separation">
+            <div className="line"></div>
+            <p className="or">Ou</p>
+            <div className="line2"></div>
+          </div>
 
           <form onSubmit={loginuser} id="formpopup">
             <label>
