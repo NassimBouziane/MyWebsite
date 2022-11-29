@@ -1,3 +1,12 @@
+import Panier from "../components/panier"
+import NavBar from "./header"
+
+
 export default function panier() {
-  return <h1></h1>
+  return(
+  <div>    
+      <NavBar/>
+      <Panier/>
+  </div>
+  )
 }
