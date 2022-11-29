@@ -3,15 +3,17 @@ import { BiUser, BiShoppingBag } from 'react-icons/bi'
 import Image from 'next/image'
 import IoEyeSharp from 'react-icons/io'
 import { useState, useEffect } from 'react'
-import { getCookie } from 'typescript-cookie'
+import { getCookie, setCookie } from 'typescript-cookie'
 import Test from './compte/test'
 import { createOrder } from '../OrderProduct/OrderProductService'
+import { fetchUser } from '../user/userService'
 
 const today = new Date()
 const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
 
 export default function NavBar() {
-  const [connected, setConnected] = useState(<></>)
+  const [connected, setConnected] = useState(<></>) 
+  const [data, setData] = useState(null)
   useEffect(() => {
     if (getCookie('Authorization') === undefined) {
       setConnected(<Test></Test>)
@@ -22,6 +24,10 @@ export default function NavBar() {
           <BiUser />
         </Link>
       )
+      fetchUser(getCookie('username')).then((response) => {
+        setData(response.data)
+        setCookie('Id', response.data.id)
+      })
       createOrder(date, getCookie('Id'))
     }
   }, [])

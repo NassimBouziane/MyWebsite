@@ -1,12 +1,12 @@
 import { api } from '../services/servicesHelper'
 import { getCookie, setCookie } from 'typescript-cookie'
 
-export const fetchProduct = async () => {
+export const fetchOrderProducts = async () => {
   return await api.get('/OrderProduct/')
 }
 
 export const createOrder = async (orderdate: any, userid: any) => {
-  if (getCookie('OrderId') === undefined) {
+  if (getCookie('OrderId') === undefined && getCookie('Id') !== undefined) {
     return await api
       .post(
         '/order',

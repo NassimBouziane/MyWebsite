@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import { fetchProduct } from '../product/productService'
 import Image from 'next/image'
-import Footer from '../../my_website/pages/footer';
+import Footer from '../../my_website/pages/footer'
 
 export default function product() {
   const [data, setData] = useState(null)
@@ -28,18 +28,17 @@ export default function product() {
                   <p onClick={test} className="card-desc">
                     {product.productPrice} €
                   </p>
-                  <select id ="test3213" className="card-desc">
+                  <select id="test3213" className="card-desc">
                     {' '}
                     <option value="volvo">Volvo</option>
                     <option value="saab">Saab</option>
                   </select>
                 </div>
-              </div>              
+              </div>
             )
           }
         })}
-        <Footer/>
+      <Footer />
     </div>
-
   )
 }
