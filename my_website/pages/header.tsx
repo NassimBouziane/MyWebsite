@@ -22,8 +22,8 @@ export default function NavBar() {
           <BiUser />
         </Link>
       )
+      createOrder(date, getCookie('Id'))
     }
-    createOrder(date, getCookie('Id'))
   }, [])
 
   return (

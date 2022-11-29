@@ -11,7 +11,7 @@ export default function bento() {
     <div>
       <NavBar />
       <Product /> 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

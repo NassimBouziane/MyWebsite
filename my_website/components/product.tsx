@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import { fetchProduct } from '../product/productService'
 import Image from 'next/image'
+import Footer from '../pages/footer'
 
 export default function product() {
   const [data, setData] = useState(null)
@@ -37,6 +38,7 @@ export default function product() {
             )
           }
         })}
+        <Footer />
     </div>
   )
 }
