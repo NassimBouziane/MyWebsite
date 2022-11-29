@@ -31,8 +31,8 @@ export default function bouteilles() {
               </div>
             )
           }
-        })}        
-        <Footer/>
+        })}
+      <Footer />
     </div>
   )
 }

@@ -35,7 +35,7 @@ export default function NavBar() {
   return (
     <div id="body">
       <header>
-        <Link href="http://localhost:3001">
+        <Link href="../">
           <Image
             className="logo"
             src="/Greento.png"
@@ -48,20 +48,20 @@ export default function NavBar() {
         <div id="test">
           <ul className="menu">
             <li className="liste">
-              <Link href="bento">Bentos</Link>
+              <Link href="../bento">Bentos</Link>
             </li>
             <li className="liste">
-              <Link href="bouteilles">Bouteilles</Link>
+              <Link href="../bouteilles">Bouteilles</Link>
             </li>
             <li className="liste">
-              <Link href="couvert">Couverts & Accessoires</Link>
+              <Link href="../couvert">Couverts & Accessoires</Link>
             </li>
             <li className="liste">
-              <Link href="APropos">A propos</Link>
+              <Link href="../APropos">A propos</Link>
             </li>
             <li className="liste"> {connected}</li>
             <li className="liste">
-              <Link href="panier">
+              <Link href="../panier">
                 <BiShoppingBag />
               </Link>
             </li>
