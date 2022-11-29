@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import { fetchProduct } from '../product/productService'
 import Image from 'next/image'
-import Footer from '../pages/footer'
+import Footer from '../../my_website/pages/footer';
 
 export default function product() {
   const [data, setData] = useState(null)
@@ -34,11 +34,12 @@ export default function product() {
                     <option value="saab">Saab</option>
                   </select>
                 </div>
-              </div>
+              </div>              
             )
           }
         })}
-        <Footer />
+        <Footer/>
     </div>
+
   )
 }

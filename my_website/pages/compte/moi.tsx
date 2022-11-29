@@ -17,7 +17,8 @@ export default function moi() {
   const email = useRef(null)
   const phoneNumber = useRef(null)
   const password = useRef(null)
-  const [value, setValue] = React.useState(0)
+
+  const [value, setValue] = useState(0)
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
   }
@@ -149,7 +150,7 @@ export default function moi() {
           </TabPanel>
         </TabContext>
       </Box>
-      {/* <Footer/> */}
+      <Footer/>      
     </div>
   )
 }

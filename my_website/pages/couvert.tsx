@@ -11,7 +11,6 @@ export default function couvert() {
     <div>
       <NavBar />
       <Accesoire/>
-      <Footer />
     </div>
   )
 }

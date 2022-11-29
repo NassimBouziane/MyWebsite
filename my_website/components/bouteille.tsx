@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { fetchProduct } from '../product/productService'
 import Image from 'next/image'
+import Footer from '../pages/footer'
 
 export default function bouteilles() {
   const [data, setData] = useState(null)
@@ -30,7 +31,8 @@ export default function bouteilles() {
               </div>
             )
           }
-        })}
+        })}        
+        <Footer/>
     </div>
   )
 }

@@ -10,8 +10,7 @@ export default function bento() {
   return (
     <div>
       <NavBar />
-      <Product /> 
-      {/* <Footer /> */}
-    </div>
+      <Product />
+  </div>
   )
 }

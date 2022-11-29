@@ -11,7 +11,6 @@ export default function bouteilles() {
     <div>
       <NavBar />      
       <Bouteilles/>
-      <Footer />
     </div>
   )
 }

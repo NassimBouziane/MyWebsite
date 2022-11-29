@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react'
 import { fetchProduct } from '../product/productService'
 import Image from 'next/image'
-import { createOrder } from '../OrderProduct/OrderProductService'
-import { getCookie, setCookie } from 'typescript-cookie'
-import { fetchUser } from '../user/userService'
+import Footer from '../pages/footer'
 
 export default function accesoires() {
   const [data, setData] = useState(null)
@@ -38,7 +36,8 @@ export default function accesoires() {
               </div>
             )
           }
-        })}
+        })}        
+        <Footer/>
     </div>
   )
 }

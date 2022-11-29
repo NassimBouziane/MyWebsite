@@ -1,13 +1,12 @@
-import NavBar from './header'
-import Footer from './footer'
-import { useEffect } from 'react'
-import Bouteilles from '../components/bouteille'
+import Panier from "../components/panier"
+import NavBar from "./header"
+
 
 export default function panier() {
-  return (
-    <div>
-      <NavBar />
-      <Footer />
-    </div>
+  return(
+  <div>    
+      <NavBar/>
+      <Panier/>
+  </div>
   )
 }
