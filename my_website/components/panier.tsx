@@ -22,8 +22,7 @@ export default function panier() {
     price: number
   }
   return (
-    
-    <div>      
+    <div>
       {data &&
         data.map((product, i) => {
           if (product.OrderId.toString() === getCookie('OrderId')) {
@@ -58,28 +57,32 @@ export default function panier() {
                       <p>{productData && productData.price}</p>
                       <p>quantité: {product.quantity} </p>
                     </div>
-                  </div>                  
+                  </div>
                 </div>
               )
             }
           }
         })}
       <div>
-      <div className='boxSummary'>
+        <div className="boxSummary">
           <div className="summary">
-          <div className="summary-total-items"><span className="total-items"></span>Vos produits</div>
-          <div className="summary-subtotal">
-            <div className="subtotal-title">Prix Total</div>
-            <div className="subtotal-value final-value" id="basket-subtotal">130.00</div>
+            <div className="summary-total-items">
+              <span className="total-items"></span>Vos produits
+            </div>
+            <div className="summary-subtotal">
+              <div className="subtotal-title">Prix Total</div>
+              <div className="subtotal-value final-value" id="basket-subtotal">
+                130.00
+              </div>
             </div>
           </div>
           <div className="summary-delivery">
             <select name="delivery-collection" className="summary-delivery-selection">
-                <option value="0">Choisissez votre Option de Livraison</option>
-               <option value="collection">Option</option>
-               <option value="first-className">Point relais</option>
-               <option value="second-className">Livraison a domicile</option>
-               <option value="signed-for">Livraison a L'Etna</option>
+              <option value="0">Choisissez votre Option de Livraison</option>
+              <option value="collection">Option</option>
+              <option value="first-className">Point relais</option>
+              <option value="second-className">Livraison a domicile</option>
+              <option value="signed-for">Livraison a L'Etna</option>
             </select>
           </div>
           <div className="summary-total">
@@ -89,9 +92,9 @@ export default function panier() {
           <div className="summary-checkout">
             <button className="checkout-cta">Passez au payement</button>
           </div>
-                </div>
+        </div>
         <Footer />
       </div>
-      </div>
+    </div>
   )
 }
