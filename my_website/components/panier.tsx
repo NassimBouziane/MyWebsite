@@ -22,7 +22,8 @@ export default function panier() {
     price: number
   }
   return (
-    <div>
+    
+    <div>      
       {data &&
         data.map((product, i) => {
           if (product.OrderId.toString() === getCookie('OrderId')) {
@@ -57,30 +58,40 @@ export default function panier() {
                       <p>{productData && productData.price}</p>
                       <p>quantité: {product.quantity} </p>
                     </div>
-                  </div>
+                  </div>                  
                 </div>
               )
-              // fetchProductById(product.productId).then((response: any) => setData1(response))
             }
           }
         })}
-      <Footer />
-    </div>
+      <div>
+      <div className='boxSummary'>
+          <div className="summary">
+          <div className="summary-total-items"><span className="total-items"></span>Vos produits</div>
+          <div className="summary-subtotal">
+            <div className="subtotal-title">Prix Total</div>
+            <div className="subtotal-value final-value" id="basket-subtotal">130.00</div>
+            </div>
+          </div>
+          <div className="summary-delivery">
+            <select name="delivery-collection" className="summary-delivery-selection">
+                <option value="0">Choisissez votre Option de Livraison</option>
+               <option value="collection">Option</option>
+               <option value="first-className">Point relais</option>
+               <option value="second-className">Livraison a domicile</option>
+               <option value="signed-for">Livraison a L'Etna</option>
+            </select>
+          </div>
+          <div className="summary-total">
+            <div className="total-title">Total</div>
+            <div className="total-value final-value" id="basket-total"></div>
+          </div>
+          <div className="summary-checkout">
+            <button className="checkout-cta">Passez au payement</button>
+          </div>
+                </div>
+        <Footer />
+      </div>
+      </div>
   )
 }
-
-// a faire : get les produits en fonction de product id
-
-// créer une fonction UNE SEULE FOIS qui créer orderproducts quand il fait ajouter le produit
-
-// {
-//   data1 &&
-//     data1.map((product1, j) => {
-//       console.log(product1.id)
-//       console.log(data && data.productId)
-//       if (data && product1.id === data.productId) {
-//         setTest1(product1.productName)
-//         console.log(test1)
-//       }
-//     })
-// }
