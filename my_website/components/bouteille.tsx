@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react'
 import { fetchProduct } from '../product/productService'
 import Image from 'next/image'
 import Footer from '../pages/footer'
+import Link from 'next/link'
+import { setCookie } from 'typescript-cookie'
 
 export default function bouteilles() {
   const [data, setData] = useState(null)
-  function test() {
-    console.log('test')
+  const handleClick = (event, param) => {
+    setCookie('productId', param)
   }
   useEffect(() => {
     fetchProduct().then((response) => {
@@ -22,11 +24,11 @@ export default function bouteilles() {
             return (
               <div>
                 <div className="card">
-                  <Image src={src} alt="Gourdes de greento" width={800} height={800} />
+                  <Image src={src} alt="Produit de greento" width={800} height={800} />
                   <h2 className="card-title">{product.productName}</h2>
-                  <p onClick={test} className="card-desc">
+                  <Link href="../productPage" className="card-desc" onClick={(event) => handleClick(event, product.id)}>
                     {product.productPrice} €
-                  </p>
+                  </Link>
                 </div>
               </div>
             )

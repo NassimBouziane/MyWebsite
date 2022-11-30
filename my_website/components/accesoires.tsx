@@ -4,20 +4,18 @@ import Image from 'next/image'
 import Footer from '../pages/footer'
 import { fetchUser } from '../user/userService'
 import { setCookie, getCookie } from 'typescript-cookie'
+import Link from '@mui/material/Link'
 
 export default function accesoires() {
   const [data, setData] = useState(null)
-
-  function test() {
-    console.log('test')
+  const handleClick = (event, param) => {
+    setCookie('productId', param)
   }
   useEffect(() => {
     fetchProduct().then((response) => {
       setData(response.data)
     })
-    // fetchUser(getCookie('username')).then((response) => {
-    //   setCookie('Id', response.data.id)
-    // })
+
   }, [])
   return (
     <div className="cards">
@@ -28,11 +26,11 @@ export default function accesoires() {
             return (
               <div>
                 <div className="card">
-                  <Image src={src} alt="Accessoires vendu par Greento" width={800} height={800} />
+                  <Image src={src} alt="Produit de greento" width={800} height={800} />
                   <h2 className="card-title">{product.productName}</h2>
-                  <p onClick={test} className="card-desc">
+                  <Link href="../productPage" className="card-desc" onClick={(event) => handleClick(event, product.id)}>
                     {product.productPrice} €
-                  </p>
+                  </Link>
                 </div>
               </div>
             )
