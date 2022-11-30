@@ -7,9 +7,10 @@ import { getCookie, setCookie } from 'typescript-cookie'
 import { fetchProduct, fetchProductById } from '../product/productService'
 
 // A FAIRE CRéATION DE ORDERPRODCT EN FONCTION DE ORDER ID DANS LE COOKIE QUAND LE CLIENT CHOISIT DE RAJOUTER UN PRODUIT DANS SON PANIER :)
+// dire a jordan de designer la page panier
+// ajouter un bouton effacé le produit dans le panier
 export default function panier() {
   const [data, setData] = useState(null)
-
   useEffect(() => {
     fetchOrderProducts().then((response) => {
       setData(response.data)
@@ -26,7 +27,6 @@ export default function panier() {
       {data &&
         data.map((product, i) => {
           if (product.OrderId.toString() === getCookie('OrderId')) {
-            const src = `/TESTE.png`
             fetchProductById(product.productId).then((response: any) => {
               if (response.data !== null) {
                 const product: product = {
@@ -38,7 +38,7 @@ export default function panier() {
             })
             if (getCookie(`basketData${i}`) !== undefined) {
               const productData: product = JSON.parse(getCookie(`basketData${i}`))
-
+              const src = `/${productData.name}.png`
               return (
                 <div className="courses-container">
                   <div className="course">

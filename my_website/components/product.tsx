@@ -3,11 +3,13 @@ import { useEffect, useState } from 'react'
 import { fetchProduct } from '../product/productService'
 import Image from 'next/image'
 import Footer from '../../my_website/pages/footer'
+import Link from 'next/link'
+import { getCookie, setCookie } from 'typescript-cookie'
 
 export default function product() {
   const [data, setData] = useState(null)
-  function test() {
-    console.log('test')
+  const handleClick = (event, param) => {
+    setCookie('productId', param)
   }
   useEffect(() => {
     fetchProduct().then((response) => {
@@ -25,14 +27,9 @@ export default function product() {
                 <div className="card">
                   <Image src={src} alt="Produit de greento" width={800} height={800} />
                   <h2 className="card-title">{product.productName}</h2>
-                  <p onClick={test} className="card-desc">
+                  <Link href="../productPage" className="card-desc" onClick={(event) => handleClick(event, product.id)}>
                     {product.productPrice} €
-                  </p>
-                  <select id="test3213" className="card-desc">
-                    {' '}
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                  </select>
+                  </Link>
                 </div>
               </div>
             )
