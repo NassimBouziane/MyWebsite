@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { fetchOrderProducts } from '../OrderProduct/OrderProductService'
 import { getCookie, setCookie } from 'typescript-cookie'
 import { fetchProduct, fetchProductById } from '../product/productService'
+import {TiDeleteOutline} from 'react-icons/ti'
 
 // A FAIRE CRéATION DE ORDERPRODCT EN FONCTION DE ORDER ID DANS LE COOKIE QUAND LE CLIENT CHOISIT DE RAJOUTER UN PRODUIT DANS SON PANIER :)
 // dire a jordan de designer la page panier
@@ -52,12 +53,19 @@ export default function panier() {
                     <div className="course-info">
                       <div className="progress-container">
                         <div className="progress"></div>
+                        <TiDeleteOutline className='deleteProduct'/>
                       </div>
                       <h2>{productData && productData.name}</h2>
                       <p>{productData && productData.price}</p>
                       <p>quantité: {product.quantity} </p>
+
                     </div>
+<<<<<<< HEAD
                   </div>
+=======
+                  </div> 
+                                       
+>>>>>>> b9861d081f6f9448f8340f9bbc477aaedbe9f755
                 </div>
               )
             }
