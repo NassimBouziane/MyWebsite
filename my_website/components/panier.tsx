@@ -7,27 +7,23 @@ import { getCookie, setCookie } from 'typescript-cookie'
 import { fetchProductById } from '../product/productService'
 import { TiDeleteOutline } from 'react-icons/ti'
 
-// A FAIRE CRéATION DE ORDERPRODCT EN FONCTION DE ORDER ID DANS LE COOKIE QUAND LE CLIENT CHOISIT DE RAJOUTER UN PRODUIT DANS SON PANIER :)
-// dire a jordan de designer la page panier
-// ajouter un bouton effacé le produit dans le panier
+
 
 export default function panier() {
   const [data, setData] = useState(null)
   const price = []
-
+const [test,setTest] = useState(0)
   const date = new Date()
   const livrasiondate = new Date()
   livrasiondate.setDate(date.getDate() + 3)
   const livraison = livrasiondate.getFullYear() + '-' + (livrasiondate.getMonth() + 1) + '-' + livrasiondate.getDate()
-
   useEffect(() => {
     fetchOrderProducts().then((response) => {
       setData(response.data)
     })
   }, [])
   const deleteProductInBasket = (event, id: number) => {
-    deleteOrderProduct(id)
-    window.location.reload()
+    deleteOrderProduct(id).then(() => window.location.reload())
   }
 
   interface product {
@@ -45,11 +41,11 @@ export default function panier() {
                   name: response.data.productName,
                   price: response.data.productPrice
                 }
-                setCookie(`basketData${i}`, JSON.stringify(product))
+                sessionStorage.setItem(`basketData${i}`, JSON.stringify(product))
               }
             })
-            if (getCookie(`basketData${i}`) !== undefined) {
-              const productData: product = JSON.parse(getCookie(`basketData${i}`))
+            if (sessionStorage.getItem(`basketData${i}`) !== null) {
+              const productData: product = JSON.parse(sessionStorage.getItem(`basketData${i}`))
               const src = `/${productData.name}.png`
               price.push(productData.price * product.quantity)
               return (
@@ -72,7 +68,7 @@ export default function panier() {
                         />
                       </div>
                       <h2>{productData && productData.name}</h2>
-                      <p>{productData && productData.price}</p>
+                      <p>{productData && productData.price} € </p>
                       <p>quantité: {product.quantity} </p>
                     </div>
                   </div>
@@ -80,7 +76,8 @@ export default function panier() {
               )
             }
           }
-        })}
+        }
+        )}
       <div>
         <div className="boxSummary">
           <div className="summary">
