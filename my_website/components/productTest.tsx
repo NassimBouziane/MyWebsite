@@ -37,11 +37,6 @@ export default function productPageTest() {
     })
     // A FAIRE : FETCH CATEGORY BY ID
   }, [])
-
-  const [value, setValue] = useState(1);
-  const handleChange = event => {
-    setValue(event.target.value);
-  };
  
   return (
     <div>

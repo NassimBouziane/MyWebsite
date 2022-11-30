@@ -361,7 +361,6 @@ textarea {
 }
 
 
-
 .summary input,
 button {
   border: 0 none;
@@ -426,6 +425,12 @@ button:focus {
   font-size: 0.625rem;
   padding: 2px;
   width: 3.75rem;
+} 
+
+.deleteProduct{
+position: relative;
+left: 95%;
+bottom: 95%;
 }
 
 .summary {
@@ -509,7 +514,7 @@ button:focus {
   width: 50%;
   position: relative;
   left: 70%;
-  bottom: 635px;
+  
 }
 
 @media screen and (max-width: 640px) {
