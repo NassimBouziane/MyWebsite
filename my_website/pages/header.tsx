@@ -15,6 +15,7 @@ export default function NavBar() {
   const [connected, setConnected] = useState(<></>) 
   const [data, setData] = useState(null)
   useEffect(() => {
+    console.log(date);
     if (getCookie('Authorization') === undefined) {
       setConnected(<Test></Test>)
     } else if (getCookie('Authorization') !== undefined) {

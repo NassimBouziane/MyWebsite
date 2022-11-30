@@ -1,17 +1,22 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { fetchProductId } from '../product/productService';
+import { fetchProductById } from '../product/productService';
 
 export default function productPageTest() {
 
   const [data, setData] = useState(null)
 
   useEffect(() => {
-    fetchProductId(9).then((response) => {
+    fetchProductById(9).then((response) => {
       setData(response.data)
     })
   }, [])
 
+  const [value, setValue] = useState(1);
+  const handleChange = event => {
+    setValue(event.target.value);
+  };
+ 
   return (
     <div>
       <div className="card-wrapper">
@@ -45,7 +50,7 @@ export default function productPageTest() {
               </ul>
             </div>
             <div className="purchase-info">
-              <input type="number" min="1" step={1}  value="1" max="99"/>
+              <input type="number" min="1" value={value} onChange={handleChange} max="99"/>
               <button type="button" className="btn" >
               Add to Cart</button> <i className="fas fa-shopping-cart"></i>
             </div>

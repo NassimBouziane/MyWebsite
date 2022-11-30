@@ -7,6 +7,7 @@ html,body {
    position: relative;
    max-height: 100%;
    -webkit-overflow-scrolling: touch;
+   overflow-x: hidden;
 }
 
 #root{
@@ -302,6 +303,9 @@ textarea {
 /* //////  PANIER  ////// */
 .courses-container{
   margin-left: 2%;
+  width: 60%;
+  position: relative;
+  border: solid rgb(196, 184, 184) 1px;
 }
 
 .course image{
@@ -314,8 +318,8 @@ textarea {
 	border-radius: 10px;
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 	display: flex;
-	max-width: 50%;
-	width: 700px;
+	max-width: 100%;
+	width: 100%;
 }
 
 .course p {
@@ -344,7 +348,7 @@ textarea {
 }
 
 .course-preview {
-	background-color: green;
+	background-color: #416b68;
 	padding: 30px;
 	max-width: 250px;
 }
@@ -354,6 +358,178 @@ textarea {
 	padding: 5%;
 	position: relative;
 	width: 100%;
+}
+
+
+
+.summary input,
+button {
+  border: 0 none;
+  outline: 0 none;
+}
+
+.summary button {
+  background-color: #666;
+  color: #fff;
+}
+
+.summary button:hover,
+button:focus {
+  background-color: #555;
+}
+
+.price:before,
+.subtotal:before,
+.subtotal-value:before,
+.total-value:before,
+.promo-value:before {
+  content: '€';
+}
+  
+.remove button {
+  background-color: transparent;
+  color: #777;
+  float: none;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.basket-product {
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 0;
+  position: relative;
+}
+
+.product-image {
+  width: 35%;
+}
+
+.product-details {
+  width: 65%;
+}
+
+.product-frame {
+  border: 1px solid #aaa;
+}
+
+.product-details {
+  padding: 0 1.5rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.quantity-field {
+  background-color: #ccc;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 0.625rem;
+  padding: 2px;
+  width: 3.75rem;
+}
+
+.summary {
+  background-color: #eee;
+  border: 1px solid #aaa;
+  padding: 1rem;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.summary-total-items {
+  color: #666;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.summary-subtotal,
+.summary-total {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  clear: both;
+  margin: 1rem 0;
+  overflow: hidden;
+  padding: 0.5rem 0;
+  width: 50%;
+}
+
+.subtotal-title,
+.subtotal-value,
+.total-title,
+.total-value,
+.promo-title,
+.promo-value {
+  color: #111;
+  float: left;
+  width: 50%;
+}
+
+.summary-delivery {
+  padding-bottom: 3rem;
+  width: 50%;
+}
+
+.subtotal-value,
+.total-value {
+  text-align: right;
+}
+
+.total-title {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.summary-checkout {
+  display: block;
+  width: 50%;
+}
+
+.checkout-cta {
+  display: block;
+  float: none;
+  font-size: 0.75rem;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.625rem 0;
+  width: 100%;
+}
+
+.summary-delivery-selection {
+  background-color: #ccc;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  display: block;
+  font-size: 0.625rem;
+  height: 34px;
+  width: 100%;
+}
+
+.boxSummary{
+  width: 50%;
+  position: relative;
+  left: 70%;
+  bottom: 635px;
+}
+
+@media screen and (max-width: 640px) {
+  aside,
+  .basket,
+  .summary,
+  .item,
+  .remove {
+    width: 100%;
+  }
+  .summary {
+    margin-top: 1.25rem;
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 960px) {
+ .summary {
+    width: 28%;
+  }
 }
 
 
