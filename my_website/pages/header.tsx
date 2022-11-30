@@ -3,15 +3,17 @@ import { BiUser, BiShoppingBag } from 'react-icons/bi'
 import Image from 'next/image'
 import IoEyeSharp from 'react-icons/io'
 import { useState, useEffect } from 'react'
-import { getCookie } from 'typescript-cookie'
+import { getCookie, setCookie } from 'typescript-cookie'
 import Test from './compte/test'
 import { createOrder } from '../OrderProduct/OrderProductService'
+import { fetchUser } from '../user/userService'
 
 const today = new Date()
 const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
 
 export default function NavBar() {
-  const [connected, setConnected] = useState(<></>)
+  const [connected, setConnected] = useState(<></>) 
+  const [data, setData] = useState(null)
   useEffect(() => {
     if (getCookie('Authorization') === undefined) {
       setConnected(<Test></Test>)
@@ -22,6 +24,10 @@ export default function NavBar() {
           <BiUser />
         </Link>
       )
+      fetchUser(getCookie('username')).then((response) => {
+        setData(response.data)
+        setCookie('Id', response.data.id)
+      })
       createOrder(date, getCookie('Id'))
     }
   }, [])
@@ -29,7 +35,7 @@ export default function NavBar() {
   return (
     <div id="body">
       <header>
-        <Link href="http://localhost:3001">
+        <Link href="../">
           <Image
             className="logo"
             src="/Greento.png"
@@ -42,20 +48,20 @@ export default function NavBar() {
         <div id="test">
           <ul className="menu">
             <li className="liste">
-              <Link href="bento">Bentos</Link>
+              <Link href="../bento">Bentos</Link>
             </li>
             <li className="liste">
-              <Link href="bouteilles">Bouteilles</Link>
+              <Link href="../bouteilles">Bouteilles</Link>
             </li>
             <li className="liste">
-              <Link href="couvert">Couverts & Accessoires</Link>
+              <Link href="../couvert">Couverts & Accessoires</Link>
             </li>
             <li className="liste">
-              <Link href="APropos">A propos</Link>
+              <Link href="../APropos">A propos</Link>
             </li>
             <li className="liste"> {connected}</li>
             <li className="liste">
-              <Link href="panier">
+              <Link href="../panier">
                 <BiShoppingBag />
               </Link>
             </li>

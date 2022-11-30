@@ -10,7 +10,7 @@ export default function couvert() {
   return (
     <div>
       <NavBar />
-      <Accesoire/>
+      <Accesoire />
     </div>
   )
 }
