@@ -6,7 +6,7 @@ export const fetchOrderProducts = async () => {
 }
 
 export const createOrder = async (orderdate: any, userid: any) => {
-  if (getCookie('OrderId') === null && getCookie('Id') !== undefined) {
+  if (getCookie('OrderId') === undefined && getCookie('Id') !== undefined) {
     return await api
       .post(
         '/order',
