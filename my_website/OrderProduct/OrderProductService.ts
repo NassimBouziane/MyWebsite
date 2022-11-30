@@ -40,3 +40,10 @@ export const createOrderProduct = async (date: any, quantity: any, productId: an
     }
   )
 }
+export const deleteOrderProduct = async (id: number) => {
+  return await api.delete('/OrderProduct/' + id, {
+    headers: {
+      Authorization: getCookie('Authorization')
+    }
+  })
+}

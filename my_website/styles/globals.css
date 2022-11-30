@@ -377,14 +377,7 @@ button:focus {
   background-color: #555;
 }
 
-.price:before,
-.subtotal:before,
-.subtotal-value:before,
-.total-value:before,
-.promo-value:before {
-  content: '€';
-}
-  
+
 .remove button {
   background-color: transparent;
   color: #777;
@@ -573,12 +566,12 @@ bottom: 95%;
     width: 80px;
     background: #12263a;
 }
-.product-price{
+.product-priceProduct{
     margin: 1rem 0;
     font-size: 1rem;
     font-weight: 700;
 }
-.product-price span{
+.product-priceProduct span{
     font-weight: 400;
 }
 

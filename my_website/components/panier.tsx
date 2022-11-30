@@ -2,21 +2,33 @@
 import Image from 'next/image'
 import Footer from '../pages/footer'
 import React, { useEffect, useState } from 'react'
-import { fetchOrderProducts } from '../OrderProduct/OrderProductService'
+import { fetchOrderProducts, deleteOrderProduct } from '../OrderProduct/OrderProductService'
 import { getCookie, setCookie } from 'typescript-cookie'
-import { fetchProduct, fetchProductById } from '../product/productService'
-import {TiDeleteOutline} from 'react-icons/ti'
+import { fetchProductById } from '../product/productService'
+import { TiDeleteOutline } from 'react-icons/ti'
 
 // A FAIRE CRéATION DE ORDERPRODCT EN FONCTION DE ORDER ID DANS LE COOKIE QUAND LE CLIENT CHOISIT DE RAJOUTER UN PRODUIT DANS SON PANIER :)
 // dire a jordan de designer la page panier
 // ajouter un bouton effacé le produit dans le panier
+
 export default function panier() {
   const [data, setData] = useState(null)
+  const price = []
+
+  const date = new Date()
+  const livrasiondate = new Date()
+  livrasiondate.setDate(date.getDate() + 3)
+  const livraison = livrasiondate.getFullYear() + '-' + (livrasiondate.getMonth() + 1) + '-' + livrasiondate.getDate()
+
   useEffect(() => {
     fetchOrderProducts().then((response) => {
       setData(response.data)
     })
   }, [])
+  const deleteProductInBasket = (event, id: number) => {
+    deleteOrderProduct(id)
+    window.location.reload()
+  }
 
   interface product {
     name: String
@@ -39,6 +51,7 @@ export default function panier() {
             if (getCookie(`basketData${i}`) !== undefined) {
               const productData: product = JSON.parse(getCookie(`basketData${i}`))
               const src = `/${productData.name}.png`
+              price.push(productData.price * product.quantity)
               return (
                 <div className="courses-container">
                   <div className="course">
@@ -53,19 +66,16 @@ export default function panier() {
                     <div className="course-info">
                       <div className="progress-container">
                         <div className="progress"></div>
-                        <TiDeleteOutline className='deleteProduct'/>
+                        <TiDeleteOutline
+                          onClick={(event) => deleteProductInBasket(event, product.id)}
+                          className="deleteProduct"
+                        />
                       </div>
                       <h2>{productData && productData.name}</h2>
                       <p>{productData && productData.price}</p>
                       <p>quantité: {product.quantity} </p>
-
                     </div>
-<<<<<<< HEAD
                   </div>
-=======
-                  </div> 
-                                       
->>>>>>> b9861d081f6f9448f8340f9bbc477aaedbe9f755
                 </div>
               )
             }
@@ -80,14 +90,14 @@ export default function panier() {
             <div className="summary-subtotal">
               <div className="subtotal-title">Prix Total</div>
               <div className="subtotal-value final-value" id="basket-subtotal">
-                130.00
+                {price.slice(0, price.length).reduce((a, b) => a + b, 0)} €
               </div>
             </div>
+            <p> Date de livrasion prévu (~3 Jours) : {livraison}</p>
           </div>
           <div className="summary-delivery">
             <select name="delivery-collection" className="summary-delivery-selection">
               <option value="0">Choisissez votre Option de Livraison</option>
-              <option value="collection">Option</option>
               <option value="first-className">Point relais</option>
               <option value="second-className">Livraison a domicile</option>
               <option value="signed-for">Livraison a L'Etna</option>
