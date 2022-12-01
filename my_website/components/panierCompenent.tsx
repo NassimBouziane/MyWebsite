@@ -12,7 +12,6 @@ import { TiDeleteOutline } from 'react-icons/ti'
 export default function panier() {
   const [data, setData] = useState(null)
   const price = []
-const [test,setTest] = useState(0)
   const date = new Date()
   const livrasiondate = new Date()
   livrasiondate.setDate(date.getDate() + 3)
