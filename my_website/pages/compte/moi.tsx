@@ -8,8 +8,9 @@ import TabContext from '@mui/lab/TabContext'
 import TabList from '@mui/lab/TabList'
 import { useEffect, useState, useRef } from 'react'
 import { fetchUser, modifyUsers } from '../../user/userService'
-import { BsFillEyeSlashFill } from 'react-icons/bs'
-import { getCookie, setCookie } from 'typescript-cookie'
+import { BsFillEyeSlashFill, BsWindowSidebar } from 'react-icons/bs'
+import { getCookie, removeCookie, setCookie } from 'typescript-cookie'
+import { browser } from 'process'
 
 let Bool = false
 export default function moi() {
@@ -41,7 +42,13 @@ export default function moi() {
       hiddenPassword = ''
     }
   }
-
+  function logout() {
+    removeCookie('Authorization', { path: '/' })
+    removeCookie('Id', { path: '/' })
+    removeCookie('OrderId', { path: '/' })
+    removeCookie('username', { path: '/' })
+    window.location.replace('http://localhost:3001/');
+  }
   function handleclick() {
     if (data !== null && Bool === false) {
       Bool = true
@@ -99,6 +106,10 @@ export default function moi() {
                 </p>
               )}
               <span className="accountInfo">Numero de téléphone</span> {data && <p>{data.phoneNumber} </p>}
+              <button className="Logout" onClick={logout}>
+                {' '}
+                Deconnection{' '}
+              </button>
             </div>
           </TabPanel>
           <TabPanel value="2">
@@ -150,7 +161,7 @@ export default function moi() {
           </TabPanel>
         </TabContext>
       </Box>
-      <Footer/>      
+      <Footer />
     </div>
   )
 }

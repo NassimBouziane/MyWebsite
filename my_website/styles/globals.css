@@ -115,7 +115,10 @@ width: 100%;
 height: 8%;
 
 }
-
+.logout{
+  position: relative;
+  margin-left: 40%;
+}
 .account_title:focus{
   background-color: #efe9e9;
 }
@@ -378,14 +381,7 @@ button:focus {
   background-color: #555;
 }
 
-.price:before,
-.subtotal:before,
-.subtotal-value:before,
-.total-value:before,
-.promo-value:before {
-  content: '€';
-}
-  
+
 .remove button {
   background-color: transparent;
   color: #777;
@@ -574,12 +570,12 @@ bottom: 95%;
     width: 80px;
     background: #12263a;
 }
-.product-price{
+.product-priceProduct{
     margin: 1rem 0;
     font-size: 1rem;
     font-weight: 700;
 }
-.product-price span{
+.product-priceProduct span{
     font-weight: 400;
 }
 
@@ -807,5 +803,65 @@ bottom: 95%;
  
 }
 }
+    
 
-/* je veux push */
+  /*//// PAGE 404 ADMIN ////*
+
+  
+/*======================
+    404 page
+=======================*/
+
+
+.page_404{ padding:40px 0; background:#fff; font-family: 'Arvo', serif;
+}
+
+.page_404  img{ width:100%;}
+
+.four_zero_four_bg{
+ 
+ background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+    height: 400px;
+    width: 900px;
+    background-position: center;
+    position: relative;
+    left: 25%;
+ }
+ 
+ 
+ .four_zero_four_bg h1{
+ font-size:80px;
+ position: relative;
+ left:20%
+ }
+ .contant_box_404{
+  position: relative;
+  left:43%
+ }
+  .four_zero_four_bg h3{
+			 font-size:80px;
+			 }
+			 
+			 .link_404{			 
+	color: #fff!important;
+    padding: 10px 20px;
+    background: #39ac31;
+    margin: 20px 0;
+    display: inline-block;}
+	.contant_box_404{ margin-top:-50px;}
+  /*////////////////// APROPOS PAGE (ABOUT) ////////*/
+  #apropos{
+    height: 80%;
+    width: 80%;
+    margin-left: 11%;
+    margin-bottom: 3%;
+    box-shadow: 10px 10px 10px gray;
+  }
+  .apropos p{
+    margin-left: 10%;
+    font-size: 20px;
+  }
+  .apropos strong{
+    font-size: 25px;
+    margin-left: 10%;
+  }

@@ -1,12 +1,11 @@
-import Panier from "../components/panier"
-import NavBar from "./header"
-
-
+import NavBar from './header'
+import Footer from './footer'
+import Panier from '../components/panierCompenent'
 export default function panier() {
-  return(
-  <div>    
-      <NavBar/>
-      <Panier/>
+  return ( 
+  <div> 
+    <NavBar />
+    <Panier />
   </div>
   )
 }
