@@ -36,7 +36,7 @@ export default function admin() {
   }
   useEffect(() => {
     document.title = 'ADMIN'
-    if (getCookie('username') !== undefined && getCookie('username') === 'CHANGEMENT123') {
+    if (getCookie('username') !== undefined && getCookie('username') === 'admin') {
       setAdmin(
         <div>
           <div>

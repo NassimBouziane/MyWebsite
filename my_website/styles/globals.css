@@ -676,3 +676,19 @@ bottom: 95%;
     margin: 20px 0;
     display: inline-block;}
 	.contant_box_404{ margin-top:-50px;}
+  /*////////////////// APROPOS PAGE (ABOUT) ////////*/
+  #apropos{
+    height: 80%;
+    width: 80%;
+    margin-left: 11%;
+    margin-bottom: 3%;
+    box-shadow: 10px 10px 10px gray;
+  }
+  .apropos p{
+    margin-left: 10%;
+    font-size: 20px;
+  }
+  .apropos strong{
+    font-size: 25px;
+    margin-left: 10%;
+  }

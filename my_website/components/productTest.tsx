@@ -44,7 +44,7 @@ export default function productPageTest() {
         <div className="cardProduct">
           <div className="product-imgs">
             <div className="img-display">
-              <Image src={src} alt="Grento Logo with sticks and point and circle" width={500} height={500} />
+              <Image src={src} alt="Grento product" width={500} height={500} />
             </div>
           </div>
           <div className="product-content">
