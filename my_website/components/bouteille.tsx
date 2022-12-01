@@ -19,7 +19,7 @@ export default function bouteilles() {
     <div className="cards">
       {data &&
         data.map((product, i) => {
-          const src = `/${product.productName}.png`
+          const src = `/${product.productName}.jpg`
           if (product.isBottle === 1) {
             return (
               <div>

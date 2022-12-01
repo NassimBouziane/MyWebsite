@@ -30,7 +30,7 @@ export default function panier() {
     price: number
   }
   return (
-    <div>
+    <div className='overflow'>
       {data &&
         data.map((product, i) => {
           if (product.OrderId.toString() === getCookie('OrderId')) {
@@ -45,7 +45,7 @@ export default function panier() {
             })
             if (sessionStorage.getItem(`basketData${i}`) !== null) {
               const productData: product = JSON.parse(sessionStorage.getItem(`basketData${i}`))
-              const src = `/${productData.name}.png`
+              const src = `/${productData.name}.jpg`
               price.push(productData.price * product.quantity)
               return (
                 <div className="courses-container">
