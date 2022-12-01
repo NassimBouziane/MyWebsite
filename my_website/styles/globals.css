@@ -238,6 +238,7 @@ textarea {
   margin-left: 5%;
 }
 
+
 .or{
   display: flex;
   margin-top: 15%;
@@ -630,6 +631,178 @@ bottom: 95%;
         justify-content: center;
     }
   }
+
+
+  /* ///// MAIN PAGE ///// */
+
+  .slider {
+    border-radius: 2%;
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 5%;
+  }
+  
+  .slides {
+    width: calc(520px * 10);
+    animation: glisse 50s infinite;
+  }
+  
+  .slide {
+    float: left;
+  }
+  
+  @keyframes glisse {
+    0% {
+      transform: translateX(0);
+    }
+    10% {
+      transform: translateX(0);
+    }
+    20% {
+      transform: translateX(-520px);
+    }
+    30% {
+      transform: translateX(-1040px);
+    }
+    40% {
+      transform: translateX(-1560px);
+    }
+    50% {
+      transform: translateX(-2080px);
+    }
+  
+    60% {
+      transform: translateX(-2600);
+    }
+    70% {
+      transform: translateX(-3120);
+    }
+    80% {
+      transform: translateX(-3640);
+    }
+    90% {
+      transform: translateX(-3640);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+
+.backgroundImage img{
+  filter: grayscale(20%) contrast(60%);
+  width: 100%;
+}
+
+.bannerHome{
+  width: 100%;
+  z-index: 1;
+}
+.bannerHome h2{
+  color: white;
+  position: absolute;
+  top: 37%;
+  left: 7%;
+}
+.bannerHome span{
+  color: white;
+  position: absolute;
+  top: 40%;
+  left: 7%;
+}
+
+.bannerHome h1{
+  color: white;
+  position: absolute;
+  top: 10%;
+  left: 7%;
+}
+
+.bannerHome .lorem1{
+  color: white;
+  position: absolute;
+  top: 13%;
+  left: 7%;
+}
+.bannerHome .lorem2{
+  color: white;
+  position: absolute;
+  top: 18%;
+  left: 7%;
+}
+.bannerHome .lorem3{
+  color: white;
+  position: absolute;
+  top: 24%;
+  left: 7%;
+}
+@media only screen and (max-width: 412px){
+ 
+  .liste{
+    display: flex;
+    margin-left: 5%;
+    margin-top: -2.2%;
+    font-size: 12px;
+  }
+  .logo{
+    width: 15%;
+    height: 15%;
+  }
+  .bannerHome{
+  width: 100%;
+  z-index: 1;
+}
+.bannerHome h2{
+  color: white;
+  position: absolute;
+  top: 37%;
+  left: 7%;
+  font-size: 15px;
+}
+.bannerHome span{
+  color: white;
+  position: absolute;
+  top: 40%;
+  left: 7%;
+}
+
+.bannerHome h1{
+  color: white;
+  position: absolute;
+  top: 8%;
+  left: 7%;
+  font-size: 17px;
+}
+
+.bannerHome .lorem1{
+  color: white;
+  position: absolute;
+  top: 10%;
+  left: 7%;
+  font-size: 10px;
+}
+.bannerHome .lorem2{
+  color: white;
+  position: absolute;
+  top: 13%;
+  left: 7%;
+  font-size: 10px;
+}
+.bannerHome .lorem3{
+  color: white;
+  position: absolute;
+  top: 17%;
+  left: 7%;
+  font-size: 10px;
+}
+
+#footer-link{
+    display: flex;
+    margin-left: 30%;
+ 
+}
+}
     
 
   /*//// PAGE 404 ADMIN ////*

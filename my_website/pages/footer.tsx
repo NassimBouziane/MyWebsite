@@ -14,33 +14,33 @@ export default function Footer() {
         </div>
         <div className="footer-title">
           <p>A propos</p>
-          <Link id="footer-child" href="">
+          <Link id="footer-child" href="../APropos">
             Greento
           </Link>
           <br />
-          <Link id="footer-child" href="">
+          <Link id="footer-child" href="../APropos">
             Nos engagements
           </Link>
           <br />
-          <Link id="footer-child" href="">
+          <Link id="footer-child" href="../APropos">
             Le Made in France
           </Link>
           <br />
-          <Link id="footer-child" href="">
+          <Link id="footer-child" href="../APropos">
             Nos matiéres
           </Link>
         </div>
         <div className="footer-title">
           <p>Nos produits</p>
-          <Link id="footer-child" href="">
+          <Link id="footer-child" href="../bento">
             Nos Lunch box /Bentos
           </Link>
           <br />
-          <Link id="footer-child" href="">
+          <Link id="footer-child" href="../bouteilles">
             Gourdes
           </Link>
           <br />
-          <Link id="footer-child" href="">
+          <Link id="footer-child" href="../couvert">
             Couverts & Accessoires
           </Link>
           <br />
@@ -51,13 +51,13 @@ export default function Footer() {
         </div>
       </div>
       <div id="footer-link">
-        <Link className="footer-link" href="">
+        <Link className="footer-link" href="/conditions">
           Conditions générales de vente
         </Link>
-        <Link className="footer-link" href="">
+        <Link className="footer-link" href="/mentions">
           Mentions légales
         </Link>
-        <Link className="footer-link" href="">
+        <Link className="footer-link" href="politiques">
           Politique de protection des données
         </Link>
       </div>
