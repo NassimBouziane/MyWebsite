@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from 'react'
 import { getCookie } from 'typescript-cookie'
 import { fetchProductById } from '../product/productService'
 import { createOrderProduct } from '../OrderProduct/OrderProductService'
-import Test from '../pages/compte/test'
+import Test from '../pages/compte/modalLogin'
 import { fetchCategoriesById } from '../category/categoryService'
 
 export default function productPageTest() {
@@ -32,7 +32,7 @@ export default function productPageTest() {
     fetchProductById(getCookie('productId')).then((response) => {
       setData(response.data)
       if (response.data !== null) {
-        setSrc(`/${response.data.productName}.png`)
+        setSrc(`/${response.data.productName}.jpg`)
         fetchCategoriesById(response.data.CategoryId).then((categoryname) => setCategory(categoryname.data.name))
       }
     })
@@ -55,8 +55,7 @@ export default function productPageTest() {
             <div className="product-detail">
               <h2>A propos de ce produit: </h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur
-                placeat sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa!
+              {data && data.productDescription}
               </p>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, perferendis eius. Dignissimos,

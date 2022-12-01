@@ -1,3 +1,8 @@
+/**
+ * It fetches the data from the database, then it maps through the data and returns a card for each
+ * product that is an accessory
+ * @returns A div with a class of cards.
+ */
 import { useEffect, useState } from 'react'
 import { fetchProduct } from '../product/productService'
 import Image from 'next/image'
@@ -21,7 +26,7 @@ export default function accesoires() {
     <div className="cards">
       {data &&
         data.map((product, i) => {
-          const src = `/${product.productName}.png`
+          const src = `/${product.productName}.jpg`
           if (product.isAccessory === 1) {
             return (
               <div>

@@ -25,7 +25,7 @@ export default function home() {
         </div>
       <div className="slider">
         <div className="slides">
-        <div className="slide"><Link href="/bento" target={"blank"}><Image src="/bento.jpg" alt=""width={520}height={520}/></Link></div>
+        <div className="slide"><Link href="/bento" target={"blank"}><Image src="/bento  en bois.jpg" alt=""width={520}height={520}/></Link></div>
         <div className="slide"><Link href="/bento" target={"blank"}><Image src="/bentoGlass.jpg" alt=""width={520}height={520}/></Link></div>
         <div className="slide"><Link href="/couvert" target={"blank"}><Image src="/couvertPlastic.jpg" alt=""width={520}height={520}/></Link></div>
         <div className="slide"><Link href="/bento" target={"blank"}><Image src="/bentoWood1.jpg" alt=""width={520}height={520}/></Link></div>
