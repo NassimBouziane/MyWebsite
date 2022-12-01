@@ -1,5 +1,3 @@
-import NavBar from './header'
-import Footer from './footer'
 import { useEffect, useState, useRef } from 'react'
 import { getCookie } from 'typescript-cookie'
 import { createProduct, deleteProduct } from '../product/productService'
@@ -14,8 +12,8 @@ export default function admin() {
   const isAccessory = useRef(null)
   const id = useRef(null)
   const idCategory = useRef(null)
-  const categoryName = useRef(null);
-  const IdDeleteCategory = useRef(null);
+  const categoryName = useRef(null)
+  const IdDeleteCategory = useRef(null)
   function createProductForm() {
     createProduct(
       productName.current.value,

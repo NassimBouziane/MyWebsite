@@ -1,14 +1,8 @@
-/**
- * It fetches the data from the database, then it maps through the data and returns a card for each
- * product that is an accessory
- * @returns A div with a class of cards.
- */
 import { useEffect, useState } from 'react'
 import { fetchProduct } from '../product/productService'
 import Image from 'next/image'
 import Footer from '../pages/footer'
-import { fetchUser } from '../user/userService'
-import { setCookie, getCookie } from 'typescript-cookie'
+import { setCookie } from 'typescript-cookie'
 import Link from '@mui/material/Link'
 
 export default function accesoires() {
@@ -20,7 +14,6 @@ export default function accesoires() {
     fetchProduct().then((response) => {
       setData(response.data)
     })
-
   }, [])
   return (
     <div className="cards">

@@ -9,7 +9,7 @@ export default function APropos() {
   return (
     <div>
       <NavBar />
-      <div className='apropos'>
+      <div className="apropos">
         {' '}
         <Image
           id="apropos"

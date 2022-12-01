@@ -1,10 +1,9 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { useEffect, useState } from 'react'
 import { fetchProduct } from '../product/productService'
 import Image from 'next/image'
 import Footer from '../../my_website/pages/footer'
 import Link from 'next/link'
-import { getCookie, setCookie } from 'typescript-cookie'
+import { setCookie } from 'typescript-cookie'
 
 export default function product() {
   const [data, setData] = useState(null)

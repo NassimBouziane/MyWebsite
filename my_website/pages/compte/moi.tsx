@@ -8,9 +8,8 @@ import TabContext from '@mui/lab/TabContext'
 import TabList from '@mui/lab/TabList'
 import { useEffect, useState, useRef } from 'react'
 import { fetchUser, modifyUsers } from '../../user/userService'
-import { BsFillEyeSlashFill, BsWindowSidebar } from 'react-icons/bs'
+import { BsFillEyeSlashFill } from 'react-icons/bs'
 import { getCookie, removeCookie, setCookie } from 'typescript-cookie'
-import { browser } from 'process'
 
 let Bool = false
 export default function moi() {
@@ -47,7 +46,7 @@ export default function moi() {
     removeCookie('Id', { path: '/' })
     removeCookie('OrderId', { path: '/' })
     removeCookie('username', { path: '/' })
-    window.location.replace('http://localhost:3001/');
+    window.location.replace('http://localhost:3001/')
   }
   function handleclick() {
     if (data !== null && Bool === false) {

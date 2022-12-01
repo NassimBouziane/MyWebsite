@@ -1,5 +1,4 @@
 import NavBar from './header'
-import Footer from './footer'
 import { useEffect } from 'react'
 import Bouteilles from '../components/bouteille'
 
@@ -9,8 +8,8 @@ export default function bouteilles() {
   }, [])
   return (
     <div>
-      <NavBar />      
-      <Bouteilles/>
+      <NavBar />
+      <Bouteilles />
     </div>
   )
 }
