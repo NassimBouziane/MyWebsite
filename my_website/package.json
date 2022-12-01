@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev1": "next dev",
     "build": "next build",
     "proxy": "http://locahost:3001",
     "start": "next start",
     "lint": "next lint",
-    "test": "start cmd /k cd ../../../MyAPI/group-990941/ ^&^& npm run dev && TIMEOUT /T 6 && npm run dev"
+    "dev": "start cmd /k cd ../../../MyAPI/group-990941/ ^&^& npm run dev && TIMEOUT /T 7 && npm run dev1"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
