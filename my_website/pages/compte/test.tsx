@@ -9,15 +9,9 @@ export default function test() {
   const [open, setOpen] = React.useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
-  function deletebyIdtest() {
-    deletebyId(6)
-  }
 
   const [data, setData] = useState(null)
   useEffect(() => {
-    fetchUser(9).then((response) => {
-      setData(response.data)
-    })
   }, [])
   const firstName = useRef(null)
   const lastName = useRef(null)
