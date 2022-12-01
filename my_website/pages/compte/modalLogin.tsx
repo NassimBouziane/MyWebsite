@@ -1,5 +1,5 @@
-import { login, register, deletebyId, fetchUser } from '../../user/userService'
-import React, { useState, useEffect, useRef } from 'react'
+import { login, register } from '../../user/userService'
+import React, { useEffect, useRef } from 'react'
 
 import Modal from '@mui/material/Modal'
 import Box from '@mui/material/Box'
@@ -10,9 +10,7 @@ export default function test() {
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
 
-  const [data, setData] = useState(null)
-  useEffect(() => {
-  }, [])
+  useEffect(() => {}, [])
   const firstName = useRef(null)
   const lastName = useRef(null)
   const username = useRef(null)

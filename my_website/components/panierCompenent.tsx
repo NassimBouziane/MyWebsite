@@ -1,13 +1,10 @@
-/* eslint-disable no-lone-blocks */
 import Image from 'next/image'
 import Footer from '../pages/footer'
 import React, { useEffect, useState } from 'react'
 import { fetchOrderProducts, deleteOrderProduct } from '../OrderProduct/OrderProductService'
-import { getCookie, setCookie } from 'typescript-cookie'
+import { getCookie } from 'typescript-cookie'
 import { fetchProductById } from '../product/productService'
 import { TiDeleteOutline } from 'react-icons/ti'
-
-
 
 export default function panier() {
   const [data, setData] = useState(null)
@@ -30,7 +27,7 @@ export default function panier() {
     price: number
   }
   return (
-    <div className='overflow'>
+    <div className="overflow">
       {data &&
         data.map((product, i) => {
           if (product.OrderId.toString() === getCookie('OrderId')) {
@@ -75,8 +72,7 @@ export default function panier() {
               )
             }
           }
-        }
-        )}
+        })}
       <div>
         <div className="boxSummary">
           <div className="summary">

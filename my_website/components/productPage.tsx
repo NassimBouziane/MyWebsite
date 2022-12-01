@@ -15,7 +15,7 @@ export default function productPageTest() {
     setValue(event.target.value)
   }
   const [connected, setConnected] = useState(<></>)
-  const [category,setCategory] = useState();
+  const [category, setCategory] = useState()
 
   const today = new Date()
   const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
@@ -37,7 +37,7 @@ export default function productPageTest() {
       }
     })
   }, [])
- 
+
   return (
     <div>
       <div className="card-wrapper">
@@ -54,9 +54,7 @@ export default function productPageTest() {
             </div>
             <div className="product-detail">
               <h2>A propos de ce produit: </h2>
-              <p>
-              {data && data.productDescription}
-              </p>
+              <p>{data && data.productDescription}</p>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, perferendis eius. Dignissimos,
                 labore suscipit. Unde.

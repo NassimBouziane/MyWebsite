@@ -37,7 +37,8 @@
       }
     ],
     "no-var": "error",
-    "@typescript-eslint/no-unused-vars": "error",
+    "array-callback-return": 0,
+    "@typescript-eslint/no-unused-vars": 0,
     "no-undef": "off",
     "no-unused-vars": "off",
     "import/named": "off",
